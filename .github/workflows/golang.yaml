@@ -99,7 +99,7 @@ jobs:
       - name: checkout gitops repo
         uses: actions/checkout@v4
         with:
-          repository: 'madhukamesh/golang-gitops'
+          repository: 'madhukamesh/golang_gitops'
           ref: main
           token: ${{ secrets.GOLANG_SECRET_TOKEN }}
           path: gitops
