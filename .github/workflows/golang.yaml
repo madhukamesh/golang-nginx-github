@@ -107,7 +107,7 @@ jobs:
       - name: Replace image tag with yq and push
         shell: bash
         run: |
-          cd gitops/k8s
+          cd golang_gitops/k8s
           yq e '.spec.template.spec.containers[0].image |= sub("v[0-9]+", "${{ steps.get_latest_tag.outputs.latest_tag }}")' -i deploy.yaml
           echo "Latest image: $(yq e '.spec.template.spec.containers[0].image' deploy.yaml)"
           git config --global user.name "github-actions[bot]"
